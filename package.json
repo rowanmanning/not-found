@@ -18,6 +18,9 @@
   "engines": {
     "node": ">=10"
   },
+  "dependencies": {
+    "http-errors": "^1.7.3"
+  },
   "devDependencies": {
     "@rowanmanning/eslint-config": "^2.1.0",
     "@rowanmanning/make": "^1.2.0",
@@ -25,7 +28,8 @@
     "mocha": "^6.2.1",
     "mockery": "^2.1.0",
     "nyc": "^14.1.1",
-    "proclaim": "^3.6.0"
+    "proclaim": "^3.6.0",
+    "sinon": "^7.5.0"
   },
   "main": "./lib/index.js",
   "scripts": {
