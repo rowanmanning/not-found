@@ -1,0 +1,34 @@
+{
+  "name": "@rowanmanning/not-found",
+  "version": "0.0.0",
+  "description": "Create Express middleware which results in an HTTP 404 Not Found error",
+  "keywords": [
+    "404",
+    "express",
+    "middleware"
+  ],
+  "author": "Rowan Manning (https://rowanmanning.com/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rowanmanning/not-found.git"
+  },
+  "homepage": "https://github.com/rowanmanning/not-found",
+  "bugs": "https://github.com/rowanmanning/not-found/issues",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "devDependencies": {
+    "@rowanmanning/eslint-config": "^2.1.0",
+    "@rowanmanning/make": "^1.2.0",
+    "eslint": "^6.5.1",
+    "mocha": "^6.2.1",
+    "mockery": "^2.1.0",
+    "nyc": "^14.1.1",
+    "proclaim": "^3.6.0"
+  },
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "make ci"
+  }
+}
