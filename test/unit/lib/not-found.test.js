@@ -1,8 +1,7 @@
 'use strict';
 
-const assert = require('proclaim');
-const mockery = require('mockery');
-const sinon = require('sinon');
+const {assert} = require('chai');
+const td = require('testdouble');
 
 describe('lib/not-found', () => {
 	let createHttpError;
@@ -13,8 +12,7 @@ describe('lib/not-found', () => {
 
 		// Mock the http-errors module
 		mockHttpError = new Error('mock http error');
-		createHttpError = sinon.stub().returns(mockHttpError);
-		mockery.registerMock('http-errors', createHttpError);
+		createHttpError = td.replace('http-errors', td.func());
 
 		notFound = require('../../../lib/not-found');
 	});
@@ -31,22 +29,28 @@ describe('lib/not-found', () => {
 		});
 
 		describe('middleware(request, response, next)', () => {
-			let next;
+			let nextFn;
 			let returnValue;
 
 			beforeEach(() => {
-				next = sinon.spy();
-				returnValue = middleware({}, {}, next);
+				td.when(createHttpError(
+					td.matchers.anything(),
+					td.matchers.anything()
+				)).thenReturn(mockHttpError);
+				nextFn = td.func();
+				returnValue = middleware({}, {}, nextFn);
 			});
 
 			it('creates an HTTP 404 error with the default message', () => {
-				assert.calledOnce(createHttpError);
-				assert.calledWithExactly(createHttpError, 404, undefined);
+				td.verify(createHttpError(404, undefined), {
+					times: 1
+				});
 			});
 
 			it('calls `next` with the created HTTP error', () => {
-				assert.calledOnce(next);
-				assert.calledWithExactly(next, mockHttpError);
+				td.verify(nextFn(mockHttpError), {
+					times: 1
+				});
 			});
 
 			it('returns nothing', () => {
@@ -71,22 +75,28 @@ describe('lib/not-found', () => {
 		});
 
 		describe('middleware(request, response, next)', () => {
-			let next;
+			let nextFn;
 			let returnValue;
 
 			beforeEach(() => {
-				next = sinon.spy();
-				returnValue = middleware({}, {}, next);
+				td.when(createHttpError(
+					td.matchers.anything(),
+					td.matchers.anything()
+				)).thenReturn(mockHttpError);
+				nextFn = td.func();
+				returnValue = middleware({}, {}, nextFn);
 			});
 
 			it('creates an HTTP 404 error with `options.message`', () => {
-				assert.calledOnce(createHttpError);
-				assert.calledWithExactly(createHttpError, 404, 'mock message');
+				td.verify(createHttpError(404, 'mock message'), {
+					times: 1
+				});
 			});
 
 			it('calls `next` with the created HTTP error', () => {
-				assert.calledOnce(next);
-				assert.calledWithExactly(next, mockHttpError);
+				td.verify(nextFn(mockHttpError), {
+					times: 1
+				});
 			});
 
 			it('returns nothing', () => {
