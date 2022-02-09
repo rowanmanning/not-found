@@ -30,7 +30,7 @@
     "nyc": "^15.1.0",
     "testdouble": "^3.16.4"
   },
-  "main": "./lib/index.js",
+  "main": "./index.js",
   "scripts": {
     "test": "make ci"
   }
