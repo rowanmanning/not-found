@@ -16,7 +16,7 @@
   "bugs": "https://github.com/rowanmanning/not-found/issues",
   "license": "MIT",
   "engines": {
-    "node": ">=14",
+    "node": ">=12",
     "npm": ">=7"
   },
   "dependencies": {
