@@ -29,7 +29,7 @@ jobs:
             ${{ runner.os }}-${{ env.cache-version }}-
             ${{ runner.os }}-
       - run: npm install
-      - run: make verify
+      - run: npm run verify
 
   # Run unit tests
   test-unit:
@@ -57,4 +57,4 @@ jobs:
             ${{ runner.os }}-${{ env.cache-version }}-
             ${{ runner.os }}-
       - run: npm install
-      - run: make test-unit-coverage
+      - run: npm run test:unit
