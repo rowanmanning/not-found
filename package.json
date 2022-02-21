@@ -42,5 +42,8 @@
       "html",
       "text"
     ]
+  },
+  "mocha": {
+    "timeout": 10000
   }
 }
