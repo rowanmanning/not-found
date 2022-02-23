@@ -23,7 +23,9 @@
     "verify": "eslint .",
     "test:unit": "mocha 'test/unit/**/*.test.js'",
     "test:coverage": "nyc npm run test:unit",
-    "test": "npm run test:coverage"
+    "test": "npm run test:coverage",
+    "project:verify": "npx --yes @rowanmanning/validate-project --type git node-library",
+    "project:fix": "npx --yes @rowanmanning/validate-project --type git node-library --fix"
   },
   "dependencies": {
     "http-errors": "^2.0.0"
@@ -41,7 +43,8 @@
     "reporter": [
       "html",
       "text"
-    ]
+    ],
+    "eager": true
   },
   "mocha": {
     "timeout": 10000
