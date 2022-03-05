@@ -42,7 +42,7 @@ describe('lib/not-found', () => {
 			});
 
 			it('creates an HTTP 404 error with the default message', () => {
-				td.verify(createHttpError(404, undefined), {
+				td.verify(createHttpError(404, 'Not Found'), {
 					times: 1
 				});
 			});
