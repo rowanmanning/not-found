@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.0.1](https://github.com/rowanmanning/not-found/compare/v3.0.0...v3.0.1) (2022-04-27)
+
+
+### Bug Fixes
+
+* add new config files to npmignore ([634b962](https://github.com/rowanmanning/not-found/commit/634b96254de87cb649d94981cffcc80314703da7))
+
 ## [3.0.0](https://github.com/rowanmanning/not-found/compare/v2.1.0...v3.0.0) (2022-04-27)
 
 
