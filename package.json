@@ -16,8 +16,8 @@
   "bugs": "https://github.com/rowanmanning/not-found/issues",
   "license": "MIT",
   "engines": {
-    "node": ">=12",
-    "npm": ">=7"
+    "node": ">=14",
+    "npm": ">=8"
   },
   "scripts": {
     "verify": "eslint .",
