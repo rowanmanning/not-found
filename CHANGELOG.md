@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.0.2](https://github.com/rowanmanning/not-found/compare/v3.0.1...v3.0.2) (2022-04-28)
+
+
+### Bug Fixes
+
+* correct dependabot commit config ([37719f2](https://github.com/rowanmanning/not-found/commit/37719f22acc0bb67745ef3e845fb99ee159e36be))
+
 ### [3.0.1](https://github.com/rowanmanning/not-found/compare/v3.0.0...v3.0.1) (2022-04-27)
 
 
