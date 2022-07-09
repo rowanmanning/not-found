@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.1](https://github.com/rowanmanning/not-found/compare/v3.1.0...v3.1.1) (2022-07-09)
+
+
+### Bug Fixes
+
+* hide the misc changelog section ([4848718](https://github.com/rowanmanning/not-found/commit/4848718950228b4cc9e3aa20a4db74817d26360b))
+
 ## [3.1.0](https://github.com/rowanmanning/not-found/compare/v3.0.3...v3.1.0) (2022-06-10)
 
 
