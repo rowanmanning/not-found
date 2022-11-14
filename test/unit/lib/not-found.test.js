@@ -107,4 +107,10 @@ describe('lib/not-found', () => {
 
 	});
 
+	describe('.default', () => {
+		it('aliases the module exports', () => {
+			assert.strictEqual(notFound, notFound.default);
+		});
+	});
+
 });
