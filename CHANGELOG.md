@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.2](https://github.com/rowanmanning/not-found/compare/v3.1.1...v3.1.2) (2022-11-14)
+
+
+### Bug Fixes
+
+* improve TypeScript compatibility ([880b699](https://github.com/rowanmanning/not-found/commit/880b69955a7c93043c360355b9a23b7a5f1eee44))
+
 ## [3.1.1](https://github.com/rowanmanning/not-found/compare/v3.1.0...v3.1.1) (2022-07-09)
 
 
