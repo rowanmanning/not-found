@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.4](https://github.com/rowanmanning/not-found/compare/v3.1.3...v3.1.4) (2023-02-14)
+
+
+### Bug Fixes
+
+* support npm v9 ([6cf71b5](https://github.com/rowanmanning/not-found/commit/6cf71b5e7ad450c4c834b2bcf96583794cde9b85))
+
 ## [3.1.3](https://github.com/rowanmanning/not-found/compare/v3.1.2...v3.1.3) (2023-01-08)
 
 
