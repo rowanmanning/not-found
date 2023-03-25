@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/rowanmanning/not-found/compare/v3.1.4...v4.0.0) (2023-03-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for Node.js 14
+
+### Miscellaneous
+
+* drop support for Node.js 14 ([5e7384d](https://github.com/rowanmanning/not-found/commit/5e7384d362ec35a7e09fc30b0e04b4dba6d7c9dc))
+
 ## [3.1.4](https://github.com/rowanmanning/not-found/compare/v3.1.3...v3.1.4) (2023-02-14)
 
 
