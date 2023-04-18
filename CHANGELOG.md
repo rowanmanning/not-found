@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/rowanmanning/not-found/compare/v4.0.0...v4.0.1) (2023-04-18)
+
+
+### Bug Fixes
+
+* add support for Node.js 20 ([2334c9a](https://github.com/rowanmanning/not-found/commit/2334c9a02555eade8306ee9201113a8f3a79b006))
+
 ## [4.0.0](https://github.com/rowanmanning/not-found/compare/v3.1.4...v4.0.0) (2023-03-25)
 
 

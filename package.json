@@ -1,6 +1,6 @@
 {
   "name": "@rowanmanning/not-found",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Create Express middleware which results in an HTTP 404 Not Found error",
   "keywords": [
     "404",
