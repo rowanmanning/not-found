@@ -4,16 +4,9 @@ const assert = require('node:assert');
 const td = require('testdouble');
 
 describe('lib/not-found', () => {
-	let createHttpError;
-	let mockHttpError;
 	let notFound;
 
 	beforeEach(() => {
-
-		// Mock the http-errors module
-		mockHttpError = new Error('mock http error');
-		createHttpError = td.replace('http-errors', td.func());
-
 		notFound = require('../../../lib/not-found');
 	});
 
@@ -33,24 +26,20 @@ describe('lib/not-found', () => {
 			let returnValue;
 
 			beforeEach(() => {
-				td.when(createHttpError(
-					td.matchers.anything(),
-					td.matchers.anything()
-				)).thenReturn(mockHttpError);
 				nextFn = td.func();
 				returnValue = middleware({}, {}, nextFn);
 			});
 
-			it('creates an HTTP 404 error with the default message', () => {
-				td.verify(createHttpError(404, 'Not Found'), {
+			it('calls `next` with a 404 error', () => {
+				td.verify(nextFn(), {
+					ignoreExtraArgs: true,
 					times: 1
 				});
-			});
-
-			it('calls `next` with the created HTTP error', () => {
-				td.verify(nextFn(mockHttpError), {
-					times: 1
-				});
+				const error = td.explain(nextFn).calls[0].args[0];
+				assert.ok(error instanceof Error);
+				assert.strictEqual(error.status, 404);
+				assert.strictEqual(error.statusCode, 404);
+				assert.strictEqual(error.message, 'Not Found');
 			});
 
 			it('returns nothing', () => {
@@ -79,24 +68,20 @@ describe('lib/not-found', () => {
 			let returnValue;
 
 			beforeEach(() => {
-				td.when(createHttpError(
-					td.matchers.anything(),
-					td.matchers.anything()
-				)).thenReturn(mockHttpError);
 				nextFn = td.func();
 				returnValue = middleware({}, {}, nextFn);
 			});
 
-			it('creates an HTTP 404 error with `options.message`', () => {
-				td.verify(createHttpError(404, 'mock message'), {
+			it('calls `next` with a 404 error', () => {
+				td.verify(nextFn(), {
+					ignoreExtraArgs: true,
 					times: 1
 				});
-			});
-
-			it('calls `next` with the created HTTP error', () => {
-				td.verify(nextFn(mockHttpError), {
-					times: 1
-				});
+				const error = td.explain(nextFn).calls[0].args[0];
+				assert.ok(error instanceof Error);
+				assert.strictEqual(error.status, 404);
+				assert.strictEqual(error.statusCode, 404);
+				assert.strictEqual(error.message, 'mock message');
 			});
 
 			it('returns nothing', () => {
