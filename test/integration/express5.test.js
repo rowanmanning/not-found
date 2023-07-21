@@ -1,6 +1,6 @@
 'use strict';
 
-const {assert} = require('chai');
+const assert = require('node:assert');
 const createTestApp = require('./fixture/create-test-app');
 
 describe('Express 5', () => {
@@ -26,7 +26,7 @@ describe('Express 5', () => {
 		});
 
 		it('responds with the expected message', () => {
-			assert.include(response.data, 'NotFoundError: Not Found');
+			assert.ok(response.data.includes('NotFoundError: Not Found'));
 		});
 
 	});
@@ -43,7 +43,7 @@ describe('Express 5', () => {
 		});
 
 		it('responds with the expected message', () => {
-			assert.include(response.data, 'NotFoundError: Nope');
+			assert.ok(response.data.includes('NotFoundError: Nope'));
 		});
 
 	});

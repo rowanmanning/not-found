@@ -1,8 +1,7 @@
 'use strict';
 
-const createHttpError = require('http-errors');
 const httpRequest = require('axios');
-const path = require('path');
+const path = require('node:path');
 const notFound = require('../../..');
 
 module.exports = async function createTestApp(expressModule) {
@@ -12,12 +11,6 @@ module.exports = async function createTestApp(expressModule) {
 	const app = express();
 	app.set('view engine', 'hbs');
 	app.set('views', path.join(__dirname, 'view'));
-
-	// Add a route to generate errors
-	app.get(/^\/(\d+)$/, (request, response, next) => {
-		const status = parseInt(request.params[0], 10);
-		next(createHttpError(status));
-	});
 
 	// Add not found handlers
 	app.use('/404-no-message', notFound());

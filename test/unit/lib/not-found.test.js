@@ -1,6 +1,6 @@
 'use strict';
 
-const {assert} = require('chai');
+const assert = require('node:assert');
 const td = require('testdouble');
 
 describe('lib/not-found', () => {
@@ -25,7 +25,7 @@ describe('lib/not-found', () => {
 		});
 
 		it('returns a middleware function', () => {
-			assert.isFunction(middleware);
+			assert.strictEqual(typeof middleware, 'function');
 		});
 
 		describe('middleware(request, response, next)', () => {
@@ -54,7 +54,7 @@ describe('lib/not-found', () => {
 			});
 
 			it('returns nothing', () => {
-				assert.isUndefined(returnValue);
+				assert.strictEqual(returnValue, undefined);
 			});
 
 		});
@@ -71,7 +71,7 @@ describe('lib/not-found', () => {
 		});
 
 		it('returns a middleware function', () => {
-			assert.isFunction(middleware);
+			assert.strictEqual(typeof middleware, 'function');
 		});
 
 		describe('middleware(request, response, next)', () => {
@@ -100,7 +100,7 @@ describe('lib/not-found', () => {
 			});
 
 			it('returns nothing', () => {
-				assert.isUndefined(returnValue);
+				assert.strictEqual(returnValue, undefined);
 			});
 
 		});
