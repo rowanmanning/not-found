@@ -3,38 +3,9 @@
 ## 4.0.3 (2023-07-25)
 
 
-### ⚠ BREAKING CHANGES
-
-* drop support for Node.js 14
-* drop support for Node.js 12
-
-### Features
-
-* ensure typescript types are always valid ([ffab234](https://github.com/rowanmanning/not-found/commit/ffab23479ddf494365b331dba42b110557f4df15))
-
-
 ### Bug Fixes
 
-* add new config files to npmignore ([634b962](https://github.com/rowanmanning/not-found/commit/634b96254de87cb649d94981cffcc80314703da7))
-* add support for Node.js 20 ([2334c9a](https://github.com/rowanmanning/not-found/commit/2334c9a02555eade8306ee9201113a8f3a79b006))
-* bump json5 from 2.2.1 to 2.2.3 ([891c334](https://github.com/rowanmanning/not-found/commit/891c334955355f107e7295873c01d58cec4d08ac))
-* correct dependabot commit config ([37719f2](https://github.com/rowanmanning/not-found/commit/37719f22acc0bb67745ef3e845fb99ee159e36be))
-* hide the misc changelog section ([4848718](https://github.com/rowanmanning/not-found/commit/4848718950228b4cc9e3aa20a4db74817d26360b))
-* improve TypeScript compatibility ([880b699](https://github.com/rowanmanning/not-found/commit/880b69955a7c93043c360355b9a23b7a5f1eee44))
-* remove http-errors dependency ([4d8b4ba](https://github.com/rowanmanning/not-found/commit/4d8b4ba7353bb1b8d0b019d1b4d523c9278ea10d))
-* sort out broken releases ([45fa97c](https://github.com/rowanmanning/not-found/commit/45fa97c96d8120cfb8b303935ddb6521ee32de52))
-* support npm v9 ([6cf71b5](https://github.com/rowanmanning/not-found/commit/6cf71b5e7ad450c4c834b2bcf96583794cde9b85))
-
-
-### Documentation Changes
-
-* manually define changelog sections ([ba5617c](https://github.com/rowanmanning/not-found/commit/ba5617c8e547e7dc903611fd9197cc4cc157cf80))
-
-
-### Miscellaneous
-
-* drop support for Node.js 12 ([f5a56b3](https://github.com/rowanmanning/not-found/commit/f5a56b3b98a17201e3420ae055c9c363d379fd0b))
-* drop support for Node.js 14 ([5e7384d](https://github.com/rowanmanning/not-found/commit/5e7384d362ec35a7e09fc30b0e04b4dba6d7c9dc))
+* sort out broken releases
 
 ## [4.0.1](https://github.com/rowanmanning/not-found/compare/v4.0.0...v4.0.1) (2023-04-18)
 
