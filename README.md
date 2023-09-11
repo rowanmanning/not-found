@@ -16,7 +16,7 @@ Create Express middleware which results in an HTTP 404 Not Found error.
 
 This library requires the following to run:
 
-  * [Node.js](https://nodejs.org/) 16+
+  * [Node.js](https://nodejs.org/) 18+
 
 
 ## Usage
