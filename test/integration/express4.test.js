@@ -26,7 +26,7 @@ describe('Express 4', () => {
 		});
 
 		it('responds with the expected message', () => {
-			assert.ok(response.data.includes('NotFoundError: Not Found'));
+			assert.ok(response.body.includes('NotFoundError: Not Found'));
 		});
 
 	});
@@ -43,7 +43,7 @@ describe('Express 4', () => {
 		});
 
 		it('responds with the expected message', () => {
-			assert.ok(response.data.includes('NotFoundError: Nope'));
+			assert.ok(response.body.includes('NotFoundError: Nope'));
 		});
 
 	});

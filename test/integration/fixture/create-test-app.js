@@ -1,6 +1,5 @@
 'use strict';
 
-const httpRequest = require('axios');
 const path = require('node:path');
 const notFound = require('../../..');
 
@@ -32,16 +31,16 @@ module.exports = async function createTestApp(expressModule) {
 	 *
 	 * @param {string} requestPath
 	 *     The path to make a request to.
-	 * @returns {httpRequest.AxiosResponse}
+	 * @returns {Promise<{status: number, body: string}>}
 	 *     Returns an HTTP response object.
 	 */
-	function get(requestPath) {
-		return httpRequest({
-			url: `${address}${requestPath}`,
-			validateStatus() {
-				return true;
-			}
-		});
+	async function get(requestPath) {
+		const url = new URL(requestPath, address);
+		const response = await fetch(url);
+		return {
+			status: response.status,
+			body: await response.text()
+		};
 	}
 
 	// Return the two methods that we need
