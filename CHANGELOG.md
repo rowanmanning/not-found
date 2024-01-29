@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.1.0](https://github.com/rowanmanning/not-found/compare/v5.0.0...v5.1.0) (2024-01-29)
+
+
+### Features
+
+* add official support for npm 10 ([eed0d24](https://github.com/rowanmanning/not-found/commit/eed0d241a23ff8c4edd1d4994550546d03ba8417))
+
 ## [5.0.0](https://github.com/rowanmanning/not-found/compare/v4.0.3...v5.0.0) (2023-09-11)
 
 
