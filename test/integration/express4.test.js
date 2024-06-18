@@ -28,7 +28,6 @@ describe('Express 4', () => {
 		it('responds with the expected message', () => {
 			assert.ok(response.body.includes('NotFoundError: Not Found'));
 		});
-
 	});
 
 	describe('GET /404-with-message', () => {
@@ -45,7 +44,5 @@ describe('Express 4', () => {
 		it('responds with the expected message', () => {
 			assert.ok(response.body.includes('NotFoundError: Nope'));
 		});
-
 	});
-
 });
