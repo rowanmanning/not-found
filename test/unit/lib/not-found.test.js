@@ -45,9 +45,7 @@ describe('lib/not-found', () => {
 			it('returns nothing', () => {
 				assert.strictEqual(returnValue, undefined);
 			});
-
 		});
-
 	});
 
 	describe('notFound(options)', () => {
@@ -87,9 +85,7 @@ describe('lib/not-found', () => {
 			it('returns nothing', () => {
 				assert.strictEqual(returnValue, undefined);
 			});
-
 		});
-
 	});
 
 	describe('.default', () => {
@@ -97,5 +93,4 @@ describe('lib/not-found', () => {
 			assert.strictEqual(notFound, notFound.default);
 		});
 	});
-
 });

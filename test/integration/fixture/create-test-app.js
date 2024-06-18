@@ -13,7 +13,7 @@ module.exports = async function createTestApp(expressModule) {
 
 	// Add not found handlers
 	app.use('/404-no-message', notFound());
-	app.use('/404-with-message', notFound({message: 'Nope'}));
+	app.use('/404-with-message', notFound({ message: 'Nope' }));
 
 	// Start the server and get the application address
 	const server = await start(app);
@@ -60,7 +60,7 @@ module.exports = async function createTestApp(expressModule) {
  */
 function start(app) {
 	return new Promise((resolve, reject) => {
-		const server = app.listen(undefined, error => {
+		const server = app.listen(undefined, (error) => {
 			if (error) {
 				return reject(error);
 			}
