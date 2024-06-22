@@ -1,7 +1,10 @@
 'use strict';
 
+const { afterEach, beforeEach, describe, it } = require('node:test');
 const assert = require('node:assert');
 const td = require('testdouble');
+
+td.config({ ignoreWarnings: true });
 
 describe('lib/not-found', () => {
 	let notFound;
@@ -9,6 +12,8 @@ describe('lib/not-found', () => {
 	beforeEach(() => {
 		notFound = require('../../../lib/not-found');
 	});
+
+	afterEach(() => td.reset());
 
 	describe('notFound()', () => {
 		let middleware;

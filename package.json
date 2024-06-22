@@ -25,9 +25,9 @@
     "build:types": "tsc --noEmit false --emitDeclarationOnly --project ./jsconfig.json",
     "verify:types": "tsc --noEmit --project ./jsconfig.json",
     "test": "npm run test:coverage && npm run test:integration",
-    "test:unit": "mocha 'test/unit/**/*.test.js'",
+    "test:unit": "node --test test/unit",
     "test:coverage": "nyc npm run test:unit",
-    "test:integration": "mocha 'test/integration/**/*.test.js'",
+    "test:integration": "node --test test/integration",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -38,7 +38,6 @@
     "express4": "npm:express@^4.18.0",
     "express5": "npm:express@^5.0.0-beta.1",
     "husky": "^9.0.7",
-    "mocha": "^10.0.0",
     "nyc": "^15.1.0",
     "testdouble": "^3.16.4",
     "typescript": "^5.0.2"
@@ -50,8 +49,5 @@
       "text"
     ],
     "eager": true
-  },
-  "mocha": {
-    "timeout": 10000
   }
 }
