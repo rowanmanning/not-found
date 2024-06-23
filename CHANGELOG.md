@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.0](https://github.com/rowanmanning/not-found/compare/v5.1.0...v5.2.0) (2024-06-23)
+
+
+### Features
+
+* add Node.js 22 support ([e4125c8](https://github.com/rowanmanning/not-found/commit/e4125c884e4f93d2500b6e55614f24db82dd13d1))
+
 ## [5.1.0](https://github.com/rowanmanning/not-found/compare/v5.0.0...v5.1.0) (2024-01-30)
 
 
