@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.1](https://github.com/rowanmanning/not-found/compare/v5.2.0...v5.2.1) (2024-07-27)
+
+
+### Bug Fixes
+
+* prevent husky from failing ([6eee0d7](https://github.com/rowanmanning/not-found/commit/6eee0d781d143d7746d36eb5f043888698f76c96))
+
 ## [5.2.0](https://github.com/rowanmanning/not-found/compare/v5.1.0...v5.2.0) (2024-06-23)
 
 
