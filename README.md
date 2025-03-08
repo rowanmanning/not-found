@@ -28,14 +28,14 @@ npm install @rowanmanning/not-found
 Load the library into your code with a `require` call:
 
 ```js
-const notFound = require('@rowanmanning/not-found');
+const { notFound } = require('@rowanmanning/not-found');
 ```
 
 Create middleware which results in an HTTP 404 error in [Express](https://expressjs.com):
 
 ```js
 const express = require('express');
-const notFound = require('@rowanmanning/not-found');
+const { notFound } = require('@rowanmanning/not-found');
 
 const app = express();
 

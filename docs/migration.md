@@ -20,6 +20,22 @@ This document outlines how to migrate to new major breaking versions of this lib
 
 The library now only supports Node.js v20 and above.
 
+### Switch to named exports
+
+We've moved away from using a default export for the `notFound` function. It's now a named export. You'll need to update your imports:
+
+```diff
+- const notFound = require('@rowanmanning/not-found');
++ const { notFound } = require('@rowanmanning/not-found');
+```
+
+or
+
+```diff
+- import notFound from '@rowanmanning/not-found';
++ import { notFound } from '@rowanmanning/not-found';
+```
+
 ## Migrating from v4 to v5
 
 ### Dropped Node.js v16 support

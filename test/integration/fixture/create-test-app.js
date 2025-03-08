@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('node:path');
-const notFound = require('../../..');
+const { notFound } = require('../../..');
 
 module.exports = async function createTestApp(expressModule) {
 	const express = require(expressModule);

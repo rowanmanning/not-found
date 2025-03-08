@@ -26,12 +26,8 @@ class NotFoundError extends Error {
  * @returns {import('express').Handler}
  *     Returns a middleware function.
  */
-function notFound(options = {}) {
+exports.notFound = function notFound(options = {}) {
 	return (_request, _response, next) => {
 		next(new NotFoundError(options.message || 'Not Found'));
 	};
-}
-
-/** @type {notFound} */
-module.exports = notFound;
-module.exports.default = module.exports;
+};

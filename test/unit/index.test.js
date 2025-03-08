@@ -7,7 +7,7 @@ describe('not-found', () => {
 	let notFound;
 
 	beforeEach(() => {
-		notFound = require('../..');
+		notFound = require('../..').notFound;
 	});
 
 	afterEach(() => mock.reset());
@@ -81,12 +81,6 @@ describe('not-found', () => {
 			it('returns nothing', () => {
 				assert.strictEqual(returnValue, undefined);
 			});
-		});
-	});
-
-	describe('.default', () => {
-		it('aliases the module exports', () => {
-			assert.strictEqual(notFound, notFound.default);
 		});
 	});
 });
