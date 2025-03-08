@@ -3,13 +3,11 @@
 
 Create Express middleware which results in an HTTP 404 Not Found error.
 
-
-## Table of Contents
-
-  * [Requirements](#requirements)
-  * [Usage](#usage)
-  * [Contributing](#contributing)
-  * [License](#license)
+* [Requirements](#requirements)
+* [Usage](#usage)
+* [Migration](#migration)
+* [Contributing](#contributing)
+* [License](#license)
 
 
 ## Requirements
@@ -65,6 +63,11 @@ app.use((error, request, response, next) => {
     response.send(error.message); // This page does not exist
 });
 ```
+
+
+## Migration
+
+A new major version of this project is released if breaking changes are introduced. We maintain a [migration guide](docs/migration.md) to help users migrate between these versions.
 
 
 ## Contributing
