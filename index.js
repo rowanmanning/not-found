@@ -1,7 +1,10 @@
 'use strict';
 
 class NotFoundError extends Error {
-	/** @type {string} */
+	/**
+	 * @override
+	 * @type {string}
+	 */
 	name = 'NotFoundError';
 
 	/** @type {number} */
@@ -29,5 +32,6 @@ function notFound(options = {}) {
 	};
 }
 
+/** @type {notFound} */
 module.exports = notFound;
 module.exports.default = module.exports;
