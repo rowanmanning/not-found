@@ -1,5 +1,22 @@
 # Changelog
 
+## [6.0.0](https://github.com/rowanmanning/not-found/compare/v5.2.1...v6.0.0) (2025-03-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* move to named exports
+* drop Node.js 18
+
+### Miscellaneous Chores
+
+* drop Node.js 18 ([46845d1](https://github.com/rowanmanning/not-found/commit/46845d19c10f2556402fe8fe77ee3ee10df55022))
+
+
+### Code Refactoring
+
+* move to named exports ([f4b2369](https://github.com/rowanmanning/not-found/commit/f4b236949fbe6e8631003c003d6cfc982d88d8e3))
+
 ## [5.2.1](https://github.com/rowanmanning/not-found/compare/v5.2.0...v5.2.1) (2024-07-27)
 
 
