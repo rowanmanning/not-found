@@ -42,7 +42,7 @@
     "testdouble": "^3.16.4",
     "typescript": "^5.5.2"
   },
-  "main": "lib/not-found.js",
+  "main": "index.js",
   "nyc": {
     "reporter": [
       "html",

@@ -6,11 +6,11 @@ const td = require('testdouble');
 
 td.config({ ignoreWarnings: true });
 
-describe('lib/not-found', () => {
+describe('not-found', () => {
 	let notFound;
 
 	beforeEach(() => {
-		notFound = require('../../../lib/not-found');
+		notFound = require('../..');
 	});
 
 	afterEach(() => td.reset());
