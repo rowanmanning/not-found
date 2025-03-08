@@ -1,10 +1,7 @@
 'use strict';
 
-const { afterEach, beforeEach, describe, it } = require('node:test');
+const { afterEach, beforeEach, describe, it, mock } = require('node:test');
 const assert = require('node:assert');
-const td = require('testdouble');
-
-td.config({ ignoreWarnings: true });
 
 describe('not-found', () => {
 	let notFound;
@@ -13,7 +10,7 @@ describe('not-found', () => {
 		notFound = require('../..');
 	});
 
-	afterEach(() => td.reset());
+	afterEach(() => mock.reset());
 
 	describe('notFound()', () => {
 		let middleware;
@@ -31,16 +28,13 @@ describe('not-found', () => {
 			let returnValue;
 
 			beforeEach(() => {
-				nextFn = td.func();
+				nextFn = mock.fn();
 				returnValue = middleware({}, {}, nextFn);
 			});
 
 			it('calls `next` with a 404 error', () => {
-				td.verify(nextFn(), {
-					ignoreExtraArgs: true,
-					times: 1
-				});
-				const error = td.explain(nextFn).calls[0].args[0];
+				assert.strictEqual(nextFn.mock.calls.length, 1);
+				const error = nextFn.mock.calls[0].arguments[0];
 				assert.ok(error instanceof Error);
 				assert.strictEqual(error.status, 404);
 				assert.strictEqual(error.statusCode, 404);
@@ -71,16 +65,13 @@ describe('not-found', () => {
 			let returnValue;
 
 			beforeEach(() => {
-				nextFn = td.func();
+				nextFn = mock.fn();
 				returnValue = middleware({}, {}, nextFn);
 			});
 
 			it('calls `next` with a 404 error', () => {
-				td.verify(nextFn(), {
-					ignoreExtraArgs: true,
-					times: 1
-				});
-				const error = td.explain(nextFn).calls[0].args[0];
+				assert.strictEqual(nextFn.mock.calls.length, 1);
+				const error = nextFn.mock.calls[0].arguments[0];
 				assert.ok(error instanceof Error);
 				assert.strictEqual(error.status, 404);
 				assert.strictEqual(error.statusCode, 404);
