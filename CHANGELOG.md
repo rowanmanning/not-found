@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.1.0](https://github.com/rowanmanning/not-found/compare/v6.0.0...v6.1.0) (2025-05-21)
+
+
+### Features
+
+* add Node.js 24 support ([ebe9af1](https://github.com/rowanmanning/not-found/commit/ebe9af19b198f126f6f72659713edbf7e8e2df53))
+
 ## [6.0.0](https://github.com/rowanmanning/not-found/compare/v5.2.1...v6.0.0) (2025-03-08)
 
 
