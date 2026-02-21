@@ -1,6 +1,6 @@
 'use strict';
 
-const { afterEach, beforeEach, describe, it, mock } = require('node:test');
+const { beforeEach, describe, it, mock } = require('node:test');
 const assert = require('node:assert');
 
 describe('not-found', () => {
@@ -9,8 +9,6 @@ describe('not-found', () => {
 	beforeEach(() => {
 		notFound = require('../..').notFound;
 	});
-
-	afterEach(() => mock.reset());
 
 	describe('notFound()', () => {
 		let middleware;
