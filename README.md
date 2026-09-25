@@ -25,17 +25,17 @@ Install with [npm](https://www.npmjs.com/):
 npm install @rowanmanning/not-found
 ```
 
-Load the library into your code with a `require` call:
+Import the library into your code:
 
 ```js
-const { notFound } = require('@rowanmanning/not-found');
+import { notFound } from '@rowanmanning/not-found';
 ```
 
 Create middleware which results in an HTTP 404 error in [Express](https://expressjs.com):
 
 ```js
-const express = require('express');
-const { notFound } = require('@rowanmanning/not-found');
+import express from 'express';
+import { notFound } from '@rowanmanning/not-found';
 
 const app = express();
 
