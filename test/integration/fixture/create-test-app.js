@@ -1,15 +1,13 @@
-'use strict';
+import path from 'node:path';
+import { notFound } from '../../../index.js';
 
-const path = require('node:path');
-const { notFound } = require('../../..');
-
-module.exports = async function createTestApp(expressModule) {
-	const express = require(expressModule);
+export default async function createTestApp(expressModule) {
+	const { default: express } = await import(expressModule);
 
 	// Create an Express app
 	const app = express();
 	app.set('view engine', 'hbs');
-	app.set('views', path.join(__dirname, 'view'));
+	app.set('views', path.join(import.meta.dirname, 'view'));
 
 	// Add not found handlers
 	app.use('/404-no-message', notFound());
@@ -48,7 +46,7 @@ module.exports = async function createTestApp(expressModule) {
 		get,
 		stop
 	};
-};
+}
 
 /**
  * Start the application.

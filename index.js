@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @import { notFound } from '.'
  */
@@ -12,8 +10,8 @@ class NotFoundError extends Error {
 }
 
 /** @type {notFound} */
-exports.notFound = function notFound(options = {}) {
+export function notFound(options = {}) {
 	return (_request, _response, next) => {
 		next(new NotFoundError(options.message || 'Not Found'));
 	};
-};
+}

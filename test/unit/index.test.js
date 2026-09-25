@@ -1,15 +1,8 @@
-'use strict';
-
-const { beforeEach, describe, it, mock } = require('node:test');
-const assert = require('node:assert');
+import assert from 'node:assert';
+import { beforeEach, describe, it, mock } from 'node:test';
+import { notFound } from '../../index.js';
 
 describe('not-found', () => {
-	let notFound;
-
-	beforeEach(() => {
-		notFound = require('../..').notFound;
-	});
-
 	describe('notFound()', () => {
 		let middleware;
 
