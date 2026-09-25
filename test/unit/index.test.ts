@@ -1,10 +1,11 @@
 import assert from 'node:assert';
-import { beforeEach, describe, it, mock } from 'node:test';
-import { notFound } from '../../index.js';
+import { beforeEach, describe, it, type Mock, mock } from 'node:test';
+import type { Handler, Request, Response } from 'express';
+import { notFound } from '../../index.ts';
 
 describe('not-found', () => {
 	describe('notFound()', () => {
-		let middleware;
+		let middleware: Handler;
 
 		beforeEach(() => {
 			middleware = notFound();
@@ -15,19 +16,21 @@ describe('not-found', () => {
 		});
 
 		describe('middleware(request, response, next)', () => {
-			let nextFn;
-			let returnValue;
+			let nextFn: Mock<(error: unknown) => void>;
+			let returnValue: unknown;
 
 			beforeEach(() => {
 				nextFn = mock.fn();
-				returnValue = middleware({}, {}, nextFn);
+				returnValue = middleware({} as Request, {} as Response, nextFn);
 			});
 
 			it('calls `next` with a 404 error', () => {
 				assert.strictEqual(nextFn.mock.calls.length, 1);
 				const error = nextFn.mock.calls[0].arguments[0];
 				assert.ok(error instanceof Error);
+				assert.ok('status' in error);
 				assert.strictEqual(error.status, 404);
+				assert.ok('statusCode' in error);
 				assert.strictEqual(error.statusCode, 404);
 				assert.strictEqual(error.message, 'Not Found');
 			});
@@ -39,7 +42,7 @@ describe('not-found', () => {
 	});
 
 	describe('notFound(options)', () => {
-		let middleware;
+		let middleware: Handler;
 
 		beforeEach(() => {
 			middleware = notFound({
@@ -52,19 +55,21 @@ describe('not-found', () => {
 		});
 
 		describe('middleware(request, response, next)', () => {
-			let nextFn;
-			let returnValue;
+			let nextFn: Mock<(error: unknown) => void>;
+			let returnValue: unknown;
 
 			beforeEach(() => {
 				nextFn = mock.fn();
-				returnValue = middleware({}, {}, nextFn);
+				returnValue = middleware({} as Request, {} as Response, nextFn);
 			});
 
 			it('calls `next` with a 404 error', () => {
 				assert.strictEqual(nextFn.mock.calls.length, 1);
 				const error = nextFn.mock.calls[0].arguments[0];
 				assert.ok(error instanceof Error);
+				assert.ok('status' in error);
 				assert.strictEqual(error.status, 404);
+				assert.ok('statusCode' in error);
 				assert.strictEqual(error.statusCode, 404);
 				assert.strictEqual(error.message, 'mock message');
 			});

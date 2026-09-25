@@ -1,12 +1,12 @@
 import assert from 'node:assert';
 import { after, before, beforeEach, describe, it } from 'node:test';
-import createTestApp from './fixture/create-test-app.js';
+import createTestApp from './fixture/create-test-app.ts';
 
-describe('Express 4', () => {
-	let app;
+describe('Express 5', () => {
+	let app: Awaited<ReturnType<typeof createTestApp>>;
 
 	before(async () => {
-		app = await createTestApp('express4');
+		app = await createTestApp('express5');
 	});
 
 	after(() => {
@@ -14,7 +14,7 @@ describe('Express 4', () => {
 	});
 
 	describe('GET /404-no-message', () => {
-		let response;
+		let response: Response;
 
 		beforeEach(async () => {
 			response = await app.get('/404-no-message');
@@ -24,13 +24,14 @@ describe('Express 4', () => {
 			assert.strictEqual(response.status, 404);
 		});
 
-		it('responds with the expected message', () => {
-			assert.ok(response.body.includes('NotFoundError: Not Found'));
+		it('responds with the expected message', async () => {
+			const body = await response.text();
+			assert.ok(body.includes('NotFoundError: Not Found'));
 		});
 	});
 
 	describe('GET /404-with-message', () => {
-		let response;
+		let response: Response;
 
 		beforeEach(async () => {
 			response = await app.get('/404-with-message');
@@ -40,8 +41,9 @@ describe('Express 4', () => {
 			assert.strictEqual(response.status, 404);
 		});
 
-		it('responds with the expected message', () => {
-			assert.ok(response.body.includes('NotFoundError: Nope'));
+		it('responds with the expected message', async () => {
+			const body = await response.text();
+			assert.ok(body.includes('NotFoundError: Nope'));
 		});
 	});
 });
