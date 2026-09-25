@@ -1,5 +1,27 @@
 # Changelog
 
+## [7.0.0](https://github.com/rowanmanning/not-found/compare/v6.1.0...v7.0.0) (2026-09-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* switch to ESM
+* drop Node.js 20
+
+### Features
+
+* add Node.js 26 support ([b9c5d0a](https://github.com/rowanmanning/not-found/commit/b9c5d0aa21f196ec8a9c247076f4d81e03e19f1f))
+
+
+### Miscellaneous Chores
+
+* drop Node.js 20 ([3d57abe](https://github.com/rowanmanning/not-found/commit/3d57abea4a0e8cd902c14ca3e978722762e739d7))
+
+
+### Code Refactoring
+
+* switch to ESM ([7dfc083](https://github.com/rowanmanning/not-found/commit/7dfc0837703fe42db1d3da603dc79bcc7101b3e0))
+
 ## [6.1.0](https://github.com/rowanmanning/not-found/compare/v6.0.0...v6.1.0) (2025-05-21)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@rowanmanning/not-found",
-  "version": "6.1.0",
+  "version": "7.0.0",
   "type": "module",
   "description": "Create Express middleware which results in an HTTP 404 Not Found error",
   "keywords": [
